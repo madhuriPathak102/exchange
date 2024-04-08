@@ -2,3 +2,33 @@
 <p>
   Compair all 190 top crypto exchamges . The list is ranked by trading volume .
 </p>
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Exchanges"></mat-tab>
+</mat-tab-group>
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput onclick="search()" placeholder="Filter" />
+</mat-form-field>
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th>Sr No</th>
+      <th>Exchange</th>
+      <th>20 H Trade Volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let userList of userListOptions; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ userList.name }}</td>
+      <td>{{ userList.volume_1hrs_usd | currency }}billion</td>
+    </tr>
+  </tbody>
+</table>
+<mat-paginator
+  [length]="totalElements"
+  (page)="peginator($event)"
+  [pageSize]="object.perPage"
+  [pageSizeOptions]="[10, 25, 100, 200]"
+>
+</mat-paginator>
