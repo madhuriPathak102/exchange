@@ -1,0 +1,273 @@
+<form [formGroup]="creatorFormData">
+  <mat-dialog-content>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">New Creator</h5>
+        </div>
+        <div class="container text-center">
+          <div class="row align-items-start">
+            <div class="col">
+              <div class="row-form align-center">
+                <img
+                  src="..."
+                  [src]="url"
+                  height="200"
+                  width="200"
+                  class="img-thumbnail"
+                  alt="..."
+                />
+                <div class="flex-f2">
+                  <div>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      id="inputFile"
+                      formControlName="creatorProfileImage"
+                      style="
+                        font-size: 12px;
+                        width: 86px;
+                        word-break: break-word;
+                        cursor: pointer;
+                      "
+                      (change)="normalFileUpload($event, 'profile_image')"
+                    />
+                    <button type="button" class="btn btn-primary btn-sm">
+                      Upload New photo</button
+                    >&nbsp;
+                    <button type="button" class="btn btn-light btn-sm">
+                      Remove
+                    </button>
+                  </div>
+                  <div>
+                    <small
+                      >Click on the Image to change Best size is 400px x
+                      400px</small
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row align-items-start margin-tb">
+            <div class="row text-start">
+              <h4 class="hedaing">Personal Info</h4>
+            </div>
+            <div class="col">
+              <div class="tagus-form-group">
+                <label class="d-block fw-semibold color-black txt-start"
+                  >Name</label
+                >
+                <mat-form-field class="tagus-form-group mt-20">
+                  <input matInput placeholder="Name" formControlName="name" />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col">
+              <div class="tagus-form-group">
+                <label class="d-block fw-semibold color-black txt-start"
+                  >Birthday</label
+                >
+                <mat-form-field class="tagus-form-group mt-20">
+                  <input
+                    matInput
+                    placeholder="DD/MM/YYYY"
+                    formControlName="dob"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col">
+              <div class="tagus-form-group" style="text-align: justify">
+                <label class="d-block fw-semibold color-black txt-start"
+                  >Gender</label
+                >
+
+                <mat-radio-group
+                  formControlName="gender"
+                  aria-label="Select an option"
+                  class="tagus-form-group mt-20 text-start"
+                >
+                  <mat-radio-button value="M" checked>Male</mat-radio-button>
+                  <mat-radio-button value="F">Female</mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+          </div>
+          <div class="row align-items-start margin-tb">
+            <div class="col">
+              <div class="tagus-form-group">
+                <label class="d-block fw-semibold color-black txt-start"
+                  >Address</label
+                >
+                <mat-form-field class="tagus-form-group mt-20">
+                  <textarea
+                    matInput
+                    placeholder="Address"
+                    formControlName="address"
+                  ></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div class="row align-items-start margin-tb">
+            <div class="col">
+              <div class="tagus-form-group">
+                <label class="d-block fw-semibold color-black txt-start"
+                  >Country</label
+                >
+                <mat-form-field class="tagus-form-group mt-20">
+                  <mat-select formControlName="country">
+                    <mat-option
+                      [value]="country.id"
+                      *ngFor="let country of countryOptions"
+                      (click)="onCountryChange(country.id)"
+                      >{{ country.name }}</mat-option
+                    >
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col">
+              <div class="tagus-form-group">
+                <label class="d-block fw-semibold color-black txt-start"
+                  >City</label
+                >
+                <mat-form-field class="tagus-form-group mt-20">
+                  <mat-select formControlName="city">
+                    <mat-option
+                      [value]="city.id"
+                      (click)="onCityChange()"
+                      *ngFor="let city of cityOptions.cities"
+                      >{{ city.name }}</mat-option
+                    >
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col">
+              <div class="tagus-form-group">
+                <label class="d-block fw-semibold color-black txt-start"
+                  >Zip</label
+                >
+                <mat-form-field class="tagus-form-group mt-20">
+                  <input matInput placeholder="zip" formControlName="zip" />
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div class="row align-items-start margin-tb">
+            <div class="col">
+              <div class="tagus-form-group">
+                <label class="d-block fw-semibold color-black txt-start"
+                  >TimeZone</label
+                >
+                <mat-form-field class="tagus-form-group mt-20">
+                  <input
+                    matInput
+                    placeholder="Timezone"
+                    formControlName="timezone"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col">
+              <div class="tagus-form-group">
+                <label class="d-block fw-semibold color-black txt-start"
+                  >Location</label
+                >
+                <mat-form-field class="tagus-form-group mt-20">
+                  <input
+                    matInput
+                    placeholder="Location"
+                    formControlName="location"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+          <h4 class="text-start hedaing">User Information</h4>
+          <div class="row align-items-start margin-tb">
+            <div class="col">
+              <div class="tagus-form-group">
+                <label class="d-block fw-semibold color-black txt-start"
+                  >User Name</label
+                >
+                <mat-form-field class="tagus-form-group mt-20">
+                  <input
+                    matInput
+                    placeholder="User Name"
+                    formControlName="username"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col">
+              <div class="tagus-form-group">
+                <label class="d-block fw-semibold color-black txt-start"
+                  >Email</label
+                >
+                <mat-form-field class="tagus-form-group mt-20">
+                  <input matInput placeholder="Email" formControlName="email" />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col">
+              <div class="tagus-form-group">
+                <label class="d-block fw-semibold color-black txt-start"
+                  >Contact Number</label
+                >
+                <mat-form-field class="tagus-form-group mt-20">
+                  <input
+                    matInput
+                    placeholder="Contact Number"
+                    formControlName="mobile_number"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col">
+              <div class="tagus-form-group">
+                <label class="d-block fw-semibold color-black txt-start"
+                  >Status</label
+                >
+                <mat-form-field>
+                  <mat-select
+                    formControlName="status"
+                    class="tagus-form-group mt-20"
+                  >
+                    <mat-option value="Active">Active</mat-option>
+                    <mat-option value="InActive">Inactive</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <hr />
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        [mat-dialog-close]="false"
+      >
+        Close
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="creatorFormData.invalid"
+        (click)="onSubmit()"
+      >
+        {{ data ? "Update the creator detail" : "Add the creator detail" }}
+      </button>
+    </div>
+  </mat-dialog-actions>
+</form>

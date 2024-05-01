@@ -1,0 +1,543 @@
+<!-- <app-header></app-header> -->
+<div class="page-wrapper page-container">
+  <!-- <app-sidebar class="Sidebar"></app-sidebar> -->
+  <mat-tab-group animationDuration="0" [(selectedIndex)]="tabValue">
+    <!-- bu Creation-->
+    <mat-tab>
+      <form [formGroup]="busForm">
+        <div class="container">
+          <div class="flex-f" fxLayoutAlign="center center" fxLayout="row">
+            <div class="child-1">
+              <div class="row">
+                <p class="font-12">How to get started</p>
+                <p>
+                  Explore the resources below to help you deploy yourfirst
+                  workspace.
+                </p>
+              </div>
+              <div class="text-area">
+                <div class="left-icon">
+                  <div class="icon">
+                    <img src="../../../assets/vaadin_file-process.png" />
+                  </div>
+
+                  <div class="p-x">
+                    <h2 class="padd-bottom">
+                      Review the admin guide on the requirements to set up ITSM
+                      Tools
+                    </h2>
+                    <p>
+                      <a href="#"
+                        >See the guide
+                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i
+                      ></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-area">
+                <div class="left-icon">
+                  <div class="icon">
+                    <img src="../../../assets/QickFlow.png" />
+                  </div>
+
+                  <div class="p-x">
+                    <h2 class="padd-bottom">Follow the Quick start</h2>
+                    <h2 class="padd-bottom">
+                      Our Quickstart guide makes it easy to create your first
+                      workspace
+                    </h2>
+                    <p>
+                      <a href="#"
+                        >Read More
+                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i
+                      ></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="child-2">
+              <div class="start-TrailC">
+                <div class="login-txt">
+                  <p>1/4</p>
+                  <div class="textC">Let's setup your workspace</div>
+                  <small
+                    >Platform that empowers the next generation of developers to
+                    take control of their cloud infrastructure</small
+                  >
+                </div>
+                <section class="fromsection">
+                  <div class="left-icon align-items-center padding-yb">
+                    <div class="icon box-icon-orange">
+                      <img src="../../../assets/business-unit.png" />
+                    </div>
+
+                    <div class="p-x">
+                      <h2 class="padd-bottom font-20">Business Unit</h2>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="padd-bottom font-w black fw-semibold">
+                      Type your Business Unit Name
+                    </p>
+                    <mat-form-field appearance="outline">
+                      <input
+                        matInput
+                        type="type"
+                        placeholder="Enter your business unit name"
+                        class="padding-l"
+                        formControlName="buName"
+                      />
+                    </mat-form-field>
+                    <div
+                      class="form-text text-danger"
+                      *ngIf="busForm.controls['buName'].invalid  &&  busForm.controls['buName'].errors?.['required'] && (busForm.controls['buName'].touched || busForm.controls['buName'].dirty)"
+                    >
+                      This field is required
+                    </div>
+                    <!-- <p class="grey"></p> -->
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-InnerC"
+                    [disabled]="busForm.invalid"
+                    (click)="saveBUName()"
+                  >
+                    Save
+                  </button>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-tab>
+    <br />
+    <!--Department-->
+    <mat-tab>
+      <form [formGroup]="depForm">
+        <div class="container">
+          <div class="flex-f" fxLayoutAlign="center center" fxLayout="row">
+            <div class="child-1">
+              <div class="row">
+                <p class="font-12">How to get started</p>
+                <p>
+                  Explore the resources below to help you deploy yourfirst
+                  workspace.
+                </p>
+              </div>
+              <div class="text-area">
+                <div class="left-icon">
+                  <div class="icon">
+                    <img src="../../../assets/vaadin_file-process.png" />
+                  </div>
+
+                  <div class="p-x">
+                    <h2 class="padd-bottom">
+                      Review the admin guide on the requirements to set up ITSM
+                      Tools
+                    </h2>
+                    <p>
+                      <a href="#"
+                        >See the guide
+                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i
+                      ></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-area">
+                <div class="left-icon">
+                  <div class="icon">
+                    <img src="../../../assets/QickFlow.png" />
+                  </div>
+
+                  <div class="p-x">
+                    <h2 class="padd-bottom">Follow the Quick start</h2>
+                    <h2 class="padd-bottom">
+                      Our Quickstart guide makes it easy to create your first
+                      workspace
+                    </h2>
+                    <p>
+                      <a href="#"
+                        >Read More
+                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i
+                      ></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="child-2">
+              <div class="start-TrailC">
+                <div class="login-txt">
+                  <p>
+                    <a href="#"
+                      ><i class="fa fa-long-arrow-left" aria-hidden="true"></i
+                    ></a>
+                    2/4
+                  </p>
+                  <div class="textC">Let's setup your workspace</div>
+                  <small
+                    >Platform that empowers the next generation of developers to
+                    take control of their cloud infrastructure</small
+                  >
+                </div>
+                <section class="fromsection">
+                  <div class="left-icon align-items-center padding-yb">
+                    <div class="icon box-icon-orange">
+                      <img src="../../../assets/business-unit.png" />
+                    </div>
+
+                    <div class="p-x">
+                      <h2 class="padd-bottom font-20">Department</h2>
+                    </div>
+                  </div>
+                  <div class="padding-yb">
+                    <p class="padd-bottom font-w black fw-semibold">
+                      Type your Department Name
+                    </p>
+                    <mat-form-field appearance="outline">
+                      <input
+                        matInput
+                        type="type"
+                        placeholder="Enter your department name"
+                        class="padding-l"
+                        formControlName="deptName"
+                      />
+                    </mat-form-field>
+                    <div
+                      class="form-text text-danger"
+                      *ngIf="depForm.controls['deptName'].invalid  &&  depForm.controls['deptName'].errors?.['required'] && (depForm.controls['deptName'].touched || depForm.controls['deptName'].dirty)"
+                    >
+                      This field is required
+                    </div>
+                    <!-- <p class="grey"></p> -->
+                  </div>
+                  <div>
+                    <p class="padd-bottom font-w black fw-semibold">
+                      Select Business Unit
+                    </p>
+                    <select
+                      matNativeControl
+                      required
+                      class="select-option"
+                      formControlName="buName"
+                    >
+                      <option
+                        *ngFor="let business of buOptions"
+                        [value]="business.id"
+                      >
+                        {{ business.title }}
+                      </option>
+                    </select>
+                    <div
+                      class="form-text text-danger"
+                      *ngIf="depForm.controls['buName'].invalid  &&  depForm.controls['buName'].errors?.['required'] && (depForm.controls['buName'].touched || depForm.controls['buName'].dirty)"
+                    >
+                      This field is required
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="btn-InnerC"
+                    (click)="saveDeptName()"
+                    [disabled]="depForm.invalid"
+                  >
+                    Save
+                  </button>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-tab>
+    <br />
+    <!--Categories-->
+    <mat-tab>
+      <form [formGroup]="categoriesForm">
+        <div class="container">
+          <div class="flex-f" fxLayoutAlign="center center" fxLayout="row">
+            <div class="child-1">
+              <div class="row">
+                <p class="font-12">How to get started</p>
+                <p>
+                  Explore the resources below to help you deploy yourfirst
+                  workspace.
+                </p>
+              </div>
+              <div class="text-area">
+                <div class="left-icon">
+                  <div class="icon">
+                    <img src="../../../assets/vaadin_file-process.png" />
+                  </div>
+
+                  <div class="p-x">
+                    <h2 class="padd-bottom">
+                      Review the admin guide on the requirements to set up ITSM
+                      Tools
+                    </h2>
+                    <p>
+                      <a href="#"
+                        >See the guide
+                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i
+                      ></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-area">
+                <div class="left-icon">
+                  <div class="icon">
+                    <img src="../../../assets/QickFlow.png" />
+                  </div>
+
+                  <div class="p-x">
+                    <h2 class="padd-bottom">Follow the Quick start</h2>
+                    <h2 class="padd-bottom">
+                      Our Quickstart guide makes it easy to create your first
+                      workspace
+                    </h2>
+                    <p>
+                      <a href="#"
+                        >Read More
+                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i
+                      ></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="child-2">
+              <div class="start-TrailC">
+                <div class="login-txt">
+                  <p>
+                    <a href="#"
+                      ><i class="fa fa-long-arrow-left" aria-hidden="true"></i
+                    ></a>
+                    3/4
+                  </p>
+                  <div class="textC">Let's setup your workspace</div>
+                  <small
+                    >Platform that empowers the next generation of developers to
+                    take control of their cloud infrastructure</small
+                  >
+                </div>
+                <section class="fromsection">
+                  <div class="left-icon align-items-center padding-yb">
+                    <div class="icon box-icon-orange">
+                      <img src="../../../assets/business-unit.png" />
+                    </div>
+                    <div class="p-x">
+                      <h2 class="padd-bottom font-20">Categories</h2>
+                    </div>
+                  </div>
+                  <div class="padding-yb">
+                    <p class="padd-bottom font-w black fw-semibold">
+                      Type your Category Name
+                    </p>
+                    <mat-form-field appearance="outline">
+                      <input
+                        matInput
+                        type="type"
+                        placeholder="Enter your Category name"
+                        formControlName="categoryName"
+                        class="padding-l"
+                      />
+                    </mat-form-field>
+                    <div
+                      class="form-text text-danger"
+                      *ngIf="categoriesForm.controls['categoryName'].invalid  &&  categoriesForm.controls['categoryName'].errors?.['required'] && (categoriesForm.controls['categoryName'].touched || categoriesForm.controls['categoryName'].dirty)"
+                    >
+                      This field is required
+                    </div>
+                    <!-- <p class="grey"></p> -->
+                  </div>
+                  <div>
+                    <p class="padd-bottom font-w black fw-semibold">
+                      Select Department Name
+                    </p>
+                    <select
+                      matNativeControl
+                      required
+                      class="select-option"
+                      formControlName="deptName"
+                    >
+                      <option
+                        *ngFor="let department of deptOptions"
+                        [value]="department.id"
+                      >
+                        {{ department.title }}
+                      </option>
+                    </select>
+                    <div
+                      class="form-text text-danger"
+                      *ngIf="categoriesForm.controls['deptName'].invalid  &&  categoriesForm.controls['deptName'].errors?.['required'] && (categoriesForm.controls['deptName'].touched || categoriesForm.controls['deptName'].dirty)"
+                    >
+                      This field is required
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-InnerC"
+                    [disabled]="categoriesForm.invalid"
+                    (click)="saveCatName()"
+                  >
+                    Next
+                  </button>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-tab>
+    <br />
+    <!--sub-Categories-->
+    <mat-tab>
+      <form [formGroup]="subCategoriesForm">
+        <div class="container">
+          <div class="flex-f" fxLayoutAlign="center center" fxLayout="row">
+            <div class="child-1">
+              <div class="row">
+                <p class="font-12">How to get started</p>
+                <p>
+                  Explore the resources below to help you deploy yourfirst
+                  workspace.
+                </p>
+              </div>
+              <div class="text-area">
+                <div class="left-icon">
+                  <div class="icon">
+                    <img src="../../../assets/vaadin_file-process.png" />
+                  </div>
+
+                  <div class="p-x">
+                    <h2 class="padd-bottom">
+                      Review the admin guide on the requirements to set up ITSM
+                      Tools
+                    </h2>
+                    <p>
+                      <a href="#"
+                        >See the guide
+                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i
+                      ></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-area">
+                <div class="left-icon">
+                  <div class="icon">
+                    <img src="../../../assets/QickFlow.png" />
+                  </div>
+
+                  <div class="p-x">
+                    <h2 class="padd-bottom">Follow the Quick start</h2>
+                    <h2 class="padd-bottom">
+                      Our Quickstart guide makes it easy to create your first
+                      workspace
+                    </h2>
+                    <p>
+                      <a href="#"
+                        >Read More
+                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i
+                      ></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="child-2">
+              <div class="start-TrailC">
+                <div class="login-txt">
+                  <p>
+                    <a href="#"
+                      ><i class="fa fa-long-arrow-left" aria-hidden="true"></i
+                    ></a>
+                    4/4
+                  </p>
+                  <div class="textC">Let's setup your workspace</div>
+                  <small
+                    >Platform that empowers the next generation of developers to
+                    take control of their cloud infrastructure</small
+                  >
+                </div>
+                <section class="fromsection">
+                  <div class="left-icon align-items-center padding-yb">
+                    <div class="icon box-icon-orange">
+                      <img src="../../../assets/business-unit.png" />
+                    </div>
+
+                    <div class="p-x">
+                      <h2 class="padd-bottom font-20">Categories</h2>
+                    </div>
+                  </div>
+                  <div class="padding-yb">
+                    <p class="padd-bottom font-w black fw-semibold">
+                      Type your Sub-Category Name
+                    </p>
+                    <mat-form-field appearance="outline">
+                      <input
+                        matInput
+                        type="type"
+                        placeholder="Enter your Sub Category name"
+                        class="padding-l"
+                        formControlName="subCategoryName"
+                      />
+                    </mat-form-field>
+                    <div
+                      class="form-text text-danger"
+                      *ngIf="subCategoriesForm.controls['subCategoryName'].invalid  &&  subCategoriesForm.controls['subCategoryName'].errors?.['required'] && (subCategoriesForm.controls['subCategoryName'].touched || subCategoriesForm.controls['subCategoryName'].dirty)"
+                    >
+                      This field is required
+                    </div>
+                    <!-- <p class="grey">Enter your Categories name</p> -->
+                  </div>
+                  <div>
+                    <p class="padd-bottom font-w black fw-semibold">
+                      Select Categories Name
+                    </p>
+                    <select
+                      required
+                      class="select-option"
+                      formControlName="categoryName"
+                    >
+                      <option
+                        *ngFor="let categori of catOptions"
+                        [value]="categori.id"
+                      >
+                        {{ categori.title }}
+                      </option>
+                    </select>
+                    <div
+                      class="form-text text-danger"
+                      *ngIf="subCategoriesForm.controls['categoryName'].invalid  &&  subCategoriesForm.controls['categoryName'].errors?.['required'] && (subCategoriesForm.controls['categoryName'].touched || subCategoriesForm.controls['categoryName'].dirty)"
+                    >
+                      This field is required
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-InnerC"
+                    (click)="saveSubCatName()"
+                    [disabled]="subCategoriesForm.invalid"
+                  >
+                    Done
+                  </button>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-tab>
+  </mat-tab-group>
+</div>

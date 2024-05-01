@@ -1,0 +1,44 @@
+<form [formGroup]="permissionPageFomData">
+  <mat-dialog-content>
+    <h3>Permission has same role to another</h3>
+  </mat-dialog-content>
+  <hr
+    style="height: 2px; border-width: 0; color: gray; background-color: gray"
+  />
+  <mat-dialog-content>
+    <div class="tagus-form-group">
+      <label class="d-block fw-semibold color-black txt-start">From Role</label>
+      <mat-form-field class="tagus-form-group mt-20">
+        <mat-select formControlName="fromRole" placeholder="Select...">
+          <mat-option value="admin">admin</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="tagus-form-group">
+      <label class="d-block fw-semibold color-black txt-start">To Role</label>
+      <mat-form-field class="tagus-form-group mt-20">
+        <mat-select formControlName="toRole" placeholder="Select...">
+          <mat-option value="admin">admin</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <hr
+    style="height: 2px; border-width: 0; color: gray; background-color: gray"
+  />
+  <mat-dialog-actions>
+    <button type="button" mat-raised-button [mat-dialog-close]="false">
+      Close
+    </button>
+    <button
+      type="button"
+      mat-raised-button
+      color="primary"
+      (click)="onSubmit()"
+    >
+      <span class="bx bx-exit"></span>&nbsp;
+      {{ data ? "Update process copy" : "Process Copy" }}
+    </button>
+  </mat-dialog-actions>
+</form>
+<!-- [disabled]="permissionPageFomData.invalid" -->

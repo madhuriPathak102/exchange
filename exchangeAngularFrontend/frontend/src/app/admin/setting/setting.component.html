@@ -1,0 +1,1635 @@
+<!-- <app-header></app-header> -->
+
+<div class="page-wrapper page-container">
+  <!-- <app-sidebar class="Sidebar"></app-sidebar> -->
+  <div class="main-panel">
+    <div class="content-wrapper">
+      <!-- Page Title-->
+      <div class="page-title-heading mb-16">
+        <h1>Settings</h1>
+        <h3>Manage your account settings and preference</h3>
+      </div>
+      <!-- Page Title End-->
+      <!--Step area Start-->
+      <div class="page-steper box-continer-whole">
+        <mat-tab-group animationDuration="0" [(selectedIndex)]="tabValue">
+          <form
+            [formGroup]="generalFormGroup"
+            [ngClass]="{ color: generalFormGroup }"
+          >
+            <mat-tab label="General Settings">
+              <!--General setting Card-->
+              <section>
+                <mat-card class="box-shdaow card-conatiner">
+                  <!-- <mat-card-header class="inner-heading pad-10">
+                                              <mat-card-title>General Settings</mat-card-title>                                       
+                                            </mat-card-header>  [disabled]="!isStepValid(generalFormGroup)"-->
+                  <mat-card-content>
+                    <div class="row">
+                      <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >App Name</label
+                          >
+                          <mat-form-field class="tagus-form-group mt-20">
+                            <input
+                              matInput
+                              type="text"
+                              formControlName="appName"
+                            />
+                          </mat-form-field>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Email</label
+                          >
+                          <mat-form-field class="tagus-form-group mt-20">
+                            <input
+                              matInput
+                              placeholder=""
+                              formControlName="email"
+                              required
+                            />
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-4 col-md-3 col-sm-6">
+                        <div class="row">
+                          <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="tagus-form-group">
+                              <label class="d-block fw-semibold color-black"
+                                >App Logo</label
+                              >
+                              <div class="tagus-form-group mt-20">
+                                <div class="upload-box">
+                                  <i
+                                    class="fa fa-cloud-upload"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <small>click to upload.</small>
+                                  <input
+                                    type="file"
+                                    accept="image/*"
+                                    id="inputFile"
+                                    formControlName="app_logo"
+                                    style="
+                                      font-size: 12px;
+                                      width: 86px;
+                                      word-break: break-word;
+                                      cursor: pointer;
+                                    "
+                                    (change)="
+                                      normalFileUpload($event, 'app_logo')
+                                    "
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="tagus-form-group">
+                              <label class="d-block fw-semibold color-black"
+                                >App Fav Icon</label
+                              >
+                              <div class="tagus-form-group mt-20">
+                                <div class="upload-box">
+                                  <i
+                                    class="fa fa-cloud-upload"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <small>click to upload.</small>
+                                  <input
+                                    type="file"
+                                    accept="image/*"
+                                    id="inputFile"
+                                    formControlName="fav_icon"
+                                    style="
+                                      font-size: 12px;
+                                      width: 86px;
+                                      word-break: break-word;
+                                      cursor: pointer;
+                                    "
+                                    (change)="
+                                      normalFileUpload($event, 'fav_icon')
+                                    "
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="tagus-form-group">
+                          <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                              <label class="d-block fw-semibold color-black"
+                                >App Language
+                              </label>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                              <mat-checkbox
+                                class="example-margin"
+                                formControlName="appLanguageSameAsAdmin"
+                                ><small>Same as admin</small>
+                              </mat-checkbox>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                              <div class="tagus-form-group mt-20">
+                                <div>
+                                  <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                      <div class="tagus-form-group">
+                                        <label
+                                          class="d-block fw-semibold color-black"
+                                          >Admin panel language</label
+                                        >
+                                        <mat-form-field
+                                          class="tagus-form-group mt-20"
+                                        >
+                                          <select
+                                            matNativeControl
+                                            class="select-option"
+                                            formControlName="appLanguage"
+                                          >
+                                            <option value="English">
+                                              English
+                                            </option>
+                                            <option value="Hindi">Hindi</option>
+                                          </select>
+                                        </mat-form-field>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                      <div class="tagus-form-group">
+                                        <label
+                                          class="d-block fw-semibold color-black"
+                                          >Client site language</label
+                                        >
+                                        <mat-form-field
+                                          class="tagus-form-group mt-20"
+                                        >
+                                          <select
+                                            matNativeControl
+                                            formControlName="clientSideLanguage"
+                                          >
+                                            <option value="English">
+                                              English
+                                            </option>
+                                            <option value="Hindi">Hindi</option>
+                                          </select>
+                                        </mat-form-field>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="heading">
+                          Layout Settings
+                          <br />
+                          <small
+                            >Manage your account settings and preference</small
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >App Name</label
+                          >
+                          <div class="tagus-form-group mt-20">
+                            <div class="small-box">
+                              <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                  <div class="tagus-form-group">
+                                    <label
+                                      class="d-block fw-semibold color-black"
+                                      >Date Format</label
+                                    >
+                                    <mat-form-field
+                                      class="tagus-form-group mt-20"
+                                    >
+                                      <input
+                                        matInput
+                                        type="date"
+                                        placeholder="DD/MM/YYYY"
+                                        formControlName="dateFormat"
+                                      />
+                                    </mat-form-field>
+                                    <small
+                                      >Enter dates using the DD/MM/YYYY
+                                      format</small
+                                    >
+                                  </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                  <div class="tagus-form-group">
+                                    <label
+                                      class="d-block fw-semibold color-black"
+                                      >24H (HH:MM) 18:20</label
+                                    >
+                                    <mat-form-field
+                                      class="tagus-form-group mt-20"
+                                    >
+                                      <input
+                                        matInput
+                                        type="time"
+                                        placeholder="HH:MM"
+                                        formControlName="time"
+                                      />
+                                    </mat-form-field>
+                                    <span class="small-info-txt"
+                                      >Enter the time in 24-hour format
+                                      HH:MM</span
+                                    >
+                                  </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                  <div class="tagus-form-group">
+                                    <label
+                                      class="d-block fw-semibold color-black"
+                                      >Main Color</label
+                                    >
+                                    <mat-form-field
+                                      class="tagus-form-group mt-20"
+                                    >
+                                      <input
+                                        matInput
+                                        type="color"
+                                        placeholder="#44444"
+                                        formControlName="mainColor"
+                                      />
+                                    </mat-form-field>
+                                    <span class="small-info-txt"
+                                      >Main site color of client site.</span
+                                    >
+                                  </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                  <div class="tagus-form-group">
+                                    <label
+                                      class="d-block fw-semibold color-black"
+                                      >Header Color</label
+                                    >
+                                    <mat-form-field
+                                      class="tagus-form-group mt-20"
+                                    >
+                                      <input
+                                        matInput
+                                        type="color"
+                                        placeholder="#44444"
+                                        formControlName="headerColor"
+                                      />
+                                    </mat-form-field>
+                                    <span class="small-info-txt"
+                                      >Its background color of header</span
+                                    >
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Enable Force SSL</label
+                          >
+
+                          <p>
+                            Enable this then this app will check SSL Request, if
+                            not then it will redirect to SSL URL
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="tagus-form-group">
+                          <mat-slide-toggle
+                            formControlName="enableForceSSL"
+                          ></mat-slide-toggle>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Enable RTL- Client Panel</label
+                          >
+
+                          <p>
+                            Enable it, then client panel will in RTL direction
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="tagus-form-group">
+                          <mat-slide-toggle
+                            formControlName="enableRTLClientSide"
+                          ></mat-slide-toggle>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-card-content>
+                  <mat-card-actions class="float-right">
+                    <button
+                      mat-flat-button
+                      class="button-style secondery-button"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      mat-flat-button
+                      type="submit"
+                      class="button-style primary-button"
+                      (click)="tabValue = 1"
+                      [disabled]="generalFormGroup.invalid"
+                    >
+                      Next
+                    </button>
+                  </mat-card-actions>
+                </mat-card>
+              </section>
+              <!--layout  setting Card  -->
+            </mat-tab>
+          </form>
+          <form [formGroup]="emailFormGroup">
+            <mat-tab
+              label="Email Settings"
+              [disabled]="isTabDisabled(1)"
+              [ngClass]="{ tabColor: tabValue > 1 }"
+            >
+              <!--Email  setting Card-->
+              <section>
+                <mat-card class="box-shdaow card-conatiner">
+                  <!-- <mat-card-header class="inner-heading pad-10">
+                                       <mat-card-title>Email Settings</mat-card-title>                                       
+                                     </mat-card-header> -->
+                  <mat-card-content>
+                    <div class="row">
+                      <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >From Name</label
+                          >
+                          <mat-form-field class="tagus-form-group mt-20">
+                            <input
+                              matInput
+                              formControlName="fromName"
+                              placeholder=""
+                            />
+                          </mat-form-field>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >From Email</label
+                          >
+                          <mat-form-field class="tagus-form-group mt-20">
+                            <input
+                              matInput
+                              formControlName="fromEmail"
+                              placeholder=""
+                            />
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Reply To Email</label
+                          >
+                          <mat-form-field class="tagus-form-group mt-20">
+                            <input
+                              matInput
+                              formControlName="replyEmail"
+                              placeholder=""
+                            />
+                          </mat-form-field>
+                          <span class="small-info-txt"
+                            >Keep blank if you don't want to use</span
+                          >
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Enable Email To Ticket/Reply</label
+                          >
+                          <mat-radio-group
+                            aria-label="Select an option"
+                            formControlName="ticketReplyType"
+                            class="tagus-form-group mt-20"
+                          >
+                            <mat-radio-button value="Send_Mail" checked
+                              >Send Mail</mat-radio-button
+                            >
+                            <mat-radio-button value="SMTP"
+                              >SMTP</mat-radio-button
+                            >
+                          </mat-radio-group>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-8 col-md-8 col-sm-12">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >SMPT Settings</label
+                          >
+                          <div class="tagus-form-group mt-20">
+                            <div class="small-box">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                  <div class="tagus-form-group">
+                                    <label
+                                      class="d-block fw-semibold color-black"
+                                      >Host & Port</label
+                                    >
+                                    <mat-form-field
+                                      class="tagus-form-group mt-20"
+                                    >
+                                      <input
+                                        matInput
+                                        placeholder=""
+                                        formControlName="host"
+                                      />
+                                    </mat-form-field>
+                                  </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                  <div class="tagus-form-group">
+                                    <label
+                                      class="d-block fw-semibold color-black"
+                                      >&nbsp;</label
+                                    >
+                                    <mat-form-field
+                                      class="tagus-form-group mt-20"
+                                    >
+                                      <input
+                                        matInput
+                                        placeholder=""
+                                        formControlName="port"
+                                      />
+                                    </mat-form-field>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                  <div class="tagus-form-group">
+                                    <label
+                                      class="d-block fw-semibold color-black"
+                                      >Secure Protocol (SSL)</label
+                                    >
+
+                                    <p>Enable it if your protocol is secure</p>
+                                  </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                  <div class="tagus-form-group">
+                                    <mat-slide-toggle
+                                      formControlName="secureProtocol"
+                                    ></mat-slide-toggle>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-lg-4 col-md-4 col-sm-8">
+                                    <label
+                                      class="d-block fw-semibold color-black"
+                                      >Secure Protocol Type</label
+                                    >
+                                  </div>
+                                  <div class="col-lg-4 col-md-4 col-sm-8">
+                                    <mat-radio-group
+                                      aria-label="Select an option"
+                                      formControlName="secureProtocolType"
+                                      class="tagus-form-group mt-20"
+                                    >
+                                      <mat-radio-button
+                                        value="Send_Mail"
+                                        checked
+                                        >Send Mail</mat-radio-button
+                                      >
+                                      <mat-radio-button value="SMTP"
+                                        >SMTP</mat-radio-button
+                                      >
+                                    </mat-radio-group>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Enable Force SSL</label
+                          >
+
+                          <p>Enable it if your protocol is secure</p>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="tagus-form-group">
+                          <mat-slide-toggle
+                            formControlName="emailEnableForceSSL"
+                          ></mat-slide-toggle>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >User Name</label
+                          >
+                          <mat-form-field class="tagus-form-group mt-20">
+                            <input
+                              matInput
+                              placeholder=""
+                              formControlName="emailUserName"
+                            />
+                          </mat-form-field>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Password</label
+                          >
+                          <mat-form-field class="tagus-form-group mt-20">
+                            <input
+                              matInput
+                              placeholder=""
+                              formControlName="emailPassword"
+                            />
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-card-content>
+                  <mat-card-actions class="float-right">
+                    <button
+                      mat-flat-button
+                      class="button-style secondery-button"
+                      (click)="tabValue = 0"
+                    >
+                      Back
+                    </button>
+                    <button
+                      mat-flat-button
+                      class="button-style primary-button"
+                      (click)="tabValue = 2"
+                      [disabled]="emailFormGroup.invalid"
+                    >
+                      Next
+                    </button>
+                    <!--  -->
+                  </mat-card-actions>
+                </mat-card>
+              </section>
+            </mat-tab>
+          </form>
+          <form [formGroup]="ticketFormGroup">
+            <mat-tab
+              label="Ticket Settings"
+              [disabled]="isTabDisabled(2)"
+              [ngClass]="{ tabColor: tabValue > 2 }"
+            >
+              <section>
+                <mat-card class="box-shdaow card-conatiner">
+                  <!-- <mat-card-header class="inner-heading pad-10">
+                                          <mat-card-title>Tickets Settings</mat-card-title>                                       
+                                        </mat-card-header> -->
+                  <mat-card-content>
+                    <div class="row">
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black"
+                              >Enable Guest Ticket</label
+                            >
+                            <p>
+                              If you enable it then any visitor can open ticket
+                              without registration
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="enableGuestTicket"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black">
+                              Show all priroty on Guest Ticket</label
+                            >
+                            <p>
+                              If you enable this then guest user also get all
+                              priroty as dropdown option
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="showAllPriorityGuestTicket"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black"
+                              >Enable HTML Input</label
+                            >
+                            <p>
+                              If you disable this then your will get normal text
+                              area box instead of html editor
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="enableHTMLInput"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black"
+                              >Enable Auto Close</label
+                            >
+                            <p>
+                              If you enable it, then inactive ticket will be
+                              closed automatically by auto closing rule
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle formControlName="enableAutoClose">
+                            </mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black">
+                            Auto Closing Rule
+                          </label>
+                          <div class="tagus-form-group mt-20">
+                            <div class="small-box">
+                              <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                  <div class="tagus-form-group">
+                                    <label
+                                      class="d-block fw-semibold color-black"
+                                      >Hours</label
+                                    >
+                                    <mat-form-field
+                                      class="tagus-form-group mt-20"
+                                    >
+                                      <input
+                                        matInput
+                                        placeholder=""
+                                        formControlName="autoClosingRuleHr"
+                                      />
+                                    </mat-form-field>
+                                    <span class="small-info-txt">
+                                      Close ticket which has been inactive for
+                                    </span>
+                                  </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                  <div class="tagus-form-group">
+                                    <label
+                                      class="d-block fw-semibold color-black"
+                                      >State</label
+                                    >
+                                    <mat-form-field
+                                      class="tagus-form-group mt-20"
+                                    >
+                                      <input
+                                        matInput
+                                        placeholder=""
+                                        formControlName="autoClosingRuleState"
+                                      />
+                                    </mat-form-field>
+                                    <span class="small-info-txt">
+                                      Close ticket which has been inactive for
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-8 col-md-8 col-sm-12">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black">
+                            Closing Message
+                          </label>
+                          <mat-form-field class="tagus-form-group mt-20">
+                            <textarea
+                              matInput
+                              cdkTextareaAutosize
+                              formControlName="closingMessage"
+                              #autosize="cdkTextareaAutosize"
+                              cdkAutosizeMinRows="5"
+                              cdkAutosizeMaxRows="5"
+                            ></textarea>
+                          </mat-form-field>
+                          <span class="small-info-txt"
+                            >The ticket will be close which is inactive for
+                            client response
+                            <a href=""> View Closing Email Template</a>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Enable Force SSL</label
+                          >
+                          <p>
+                            Enable this then this app will check SSL Request, if
+                            not then it will redirect to SSL URL
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="tagus-form-group">
+                          <mat-slide-toggle
+                            formControlName="ticketEnableForceSSL"
+                          ></mat-slide-toggle>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Add Prefix To Ticket Track ID</label
+                          >
+                          <mat-form-field class="tagus-form-group mt-20">
+                            <input
+                              matInput
+                              placeholder=""
+                              formControlName="addPrefixToTicketTrackID"
+                            />
+                          </mat-form-field>
+                          <span class="small-info-txt"
+                            >If you set prefix than your ticket track ID look
+                            like this 'yourprefix-number' eg. ABC-1234 Limit
+                            only 4 letter</span
+                          >
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >User Max Open Ticket?</label
+                          >
+                          <mat-form-field class="tagus-form-group mt-20">
+                            <input
+                              matInput
+                              placeholder=""
+                              formControlName="userMaxOpenTicket"
+                            />
+                          </mat-form-field>
+                          <span class="small-info-txt"
+                            >Set 0 for unlimited, if you set 2 then you can open
+                            2 ticket simultaneously.</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black"
+                              >User Can Re-Open Ticket</label
+                            >
+                            <p>
+                              If you disable it then user can not re-open ticket
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="userCanReOpenTicket"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Re-Open Time (in Days)</label
+                          >
+                          <mat-form-field class="tagus-form-group mt-20">
+                            <input
+                              matInput
+                              placeholder=""
+                              formControlName="reOpenTimeInDay"
+                            />
+                          </mat-form-field>
+
+                          <span class="small-info-txt"
+                            >Set 0 then use can re-open ticket any time, if you
+                            set 7 then user can re-open the ticket which is
+                            closed within 7 days.</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Email Reply Start Text</label
+                          >
+                          <mat-form-field class="tagus-form-group mt-20">
+                            <textarea
+                              matInput
+                              cdkTextareaAutosize
+                              formControlName="emailReplyStartText"
+                              #autosize="cdkTextareaAutosize"
+                              cdkAutosizeMinRows="5"
+                              cdkAutosizeMaxRows="5"
+                            ></textarea>
+                          </mat-form-field>
+                        </div>
+                      </div>
+
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-6">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black"
+                              >Enable Ticket Feedback</label
+                            >
+                            <p>
+                              If you enable it a feedback email will be sent to
+                              ticket user email address after closing ticket
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="enableTicketFeedback"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Feedback Email Title</label
+                          >
+                          <mat-form-field class="tagus-form-group mt-20">
+                            <textarea
+                              matInput
+                              cdkTextareaAutosize
+                              formControlName="feedbackEmailTitle"
+                              #autosize="cdkTextareaAutosize"
+                              cdkAutosizeMinRows="5"
+                              cdkAutosizeMaxRows="5"
+                            ></textarea>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Positive Message</label
+                          >
+                          <mat-form-field class="tagus-form-group mt-20">
+                            <textarea
+                              matInput
+                              cdkTextareaAutosize
+                              formControlName="positiveMessage"
+                              #autosize="cdkTextareaAutosize"
+                              cdkAutosizeMinRows="5"
+                              cdkAutosizeMaxRows="5"
+                            ></textarea>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Negative Message</label
+                          >
+                          <mat-form-field class="tagus-form-group mt-20">
+                            <textarea
+                              matInput
+                              cdkTextareaAutosize
+                              formControlName="negativeMessage"
+                              #autosize="cdkTextareaAutosize"
+                              cdkAutosizeMinRows="5"
+                              cdkAutosizeMaxRows="5"
+                            ></textarea>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+                <mat-card-actions class="float-right">
+                  <button
+                    mat-flat-button
+                    class="button-style secondery-button"
+                    (click)="tabValue = 1"
+                  >
+                    Back
+                  </button>
+                  <button
+                    mat-flat-button
+                    class="button-style primary-button"
+                    (click)="tabValue = 3"
+                    [disabled]="ticketFormGroup.invalid"
+                  >
+                    Next
+                  </button>
+                  <!--  -->
+                </mat-card-actions>
+              </section>
+            </mat-tab>
+          </form>
+          <form [formGroup]="notificationFormGroup">
+            <mat-tab
+              label="Notification Settings"
+              [disabled]="isTabDisabled(3)"
+              [ngClass]="{ tabColor: tabValue > 3 }"
+            >
+              <section>
+                <mat-card class="box-shdaow card-conatiner">
+                  <!-- <mat-card-header class="inner-heading pad-10">
+                                          <mat-card-title>Email Notification Settings </mat-card-title>                                       
+                                        </mat-card-header> -->
+                  <mat-card-content>
+                    <!-- <div class="row">
+                                                <p><a href="#">Click here</a> to view the ticket assigning rule</p>
+                                            </div> -->
+                    <div class="row">
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black"
+                              >On Ticket Open
+                            </label>
+                            <p>
+                              If you enable this then admin will get
+                              notification on ticket open
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="onTicketOpen"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black"
+                              >On Ticket Assign</label
+                            >
+                            <p>
+                              If you enable this then assigned user will get
+                              notification on ticket assigning
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="onTicketAssign"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black"
+                              >On Ticket User Reply</label
+                            >
+                            <p>
+                              If you enable this then admin will get
+                              notification on ticket user reply
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="onTicketUserReply"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black"
+                              >On Admin/Staff Reply</label
+                            >
+                            <p>
+                              If you enable this then admin will get
+                              notification on ticket open
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="onAdminStaffReply"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+
+                <mat-card class="box-shdaow card-conatiner">
+                  <mat-card-header class="inner-heading pad-10">
+                    <mat-card-title
+                      >On Screeen Notification Settings
+                    </mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <div class="row">
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black"
+                              >Enable Tone (Sound)</label
+                            >
+                            <p>
+                              Admin will hear tone on notification if enabled
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="enableToneSound"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black">
+                              On Ticket Open</label
+                            >
+                            <p>
+                              If you enable this then admin will get
+                              notification on ticket open
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="onTicketOpenOnScreen"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black"
+                              >On Ticket Assign</label
+                            >
+                            <p>
+                              If you enable this then assigned user will get
+                              notification on ticket assigning
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="onTicketAssignOnScreen"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black"
+                              >On Ticket User Reply</label
+                            >
+                            <p>
+                              If you enable this then admin will get
+                              notification on ticket user reply
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="onTicketUserReplyOnScreen"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black"
+                              >On Admin/staff Reply</label
+                            >
+                            <p>
+                              If you enable this then admin will get
+                              notification on ticket open
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="onAdminStaffReplyOnScreen"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+
+                <mat-card-actions class="float-right">
+                  <button
+                    mat-flat-button
+                    class="button-style secondery-button"
+                    (click)="tabValue = 2"
+                  >
+                    Back
+                  </button>
+                  <button
+                    mat-flat-button
+                    class="button-style primary-button"
+                    (click)="tabValue = 4"
+                    [disabled]="notificationFormGroup.invalid"
+                  >
+                    Next
+                  </button>
+                  <!--  -->
+                </mat-card-actions>
+              </section>
+            </mat-tab>
+          </form>
+          <form [formGroup]="securityFormGroup">
+            <mat-tab
+              label="Security Settings"
+              [disabled]="isTabDisabled(4)"
+              [ngClass]="{ tabColor: tabValue > 4 }"
+            >
+              <!--Security  setting Card-->
+              <section>
+                <mat-card class="box-shdaow card-conatiner">
+                  <!-- <mat-card-header class="inner-heading pad-10">
+                                      <mat-card-title>Security Settings</mat-card-title>                                       
+                                    </mat-card-header> -->
+                  <mat-card-content>
+                    <div class="row">
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black"
+                              >Admin Panel Security</label
+                            >
+                            <p>Enable it to secure admin/staff user</p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="adminPanelSecurity"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black"
+                              >Country Block Settings</label
+                            >
+                            <p>
+                              Enable it then app check country for allow or
+                              block
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="countryBlockSettings"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Temporary lock admin or staff user, if Attempts
+                          </label>
+                          <div class="col-lg-10 col-md-10 col-sm-10">
+                            <div class="tagus-form-group mt-20">
+                              <div class="small-box">
+                                <div class="row">
+                                  <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="tagus-form-group">
+                                      <mat-form-field
+                                        class="tagus-form-group mt-20"
+                                      >
+                                        <input
+                                          matInput
+                                          placeholder=""
+                                          formControlName="temporaryLockAdminOrStaffUserFailedAttempt"
+                                        />
+                                      </mat-form-field>
+                                      <span class="small-info-txt"
+                                        >Miss login in</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="tagus-form-group">
+                                      <mat-form-field
+                                        class="tagus-form-group mt-20"
+                                      >
+                                        <input
+                                          matInput
+                                          placeholder=""
+                                          formControlName="temporaryLockAdminOrStaffUserFailedAttemptMin"
+                                        />
+                                      </mat-form-field>
+                                      <span class="small-info-txt"
+                                        >Minutes</span
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="col-lg-12 col-md-12 col-sm-12 border-top text-right"
+                                >
+                                  <span class="small-info-txt pad-10"
+                                    ><b>0 </b><a href="#">Locked User</a></span
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <span class="small-info-txt"
+                              >Example: Temporary lock admin or staff user if
+                              attempts 5 miss login in 30 minutes</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Country Block Rule
+                          </label>
+                          <div class="col-lg-10 col-md-10 col-sm-10">
+                            <div class="tagus-form-group mt-20">
+                              <div class="small-box">
+                                <div class="row">
+                                  <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <mat-radio-group
+                                      aria-label="Select an option"
+                                      formControlName="countriesListStatus"
+                                      class="tagus-form-group mt-20"
+                                    >
+                                      <mat-radio-button
+                                        value="Block_Listed_Country"
+                                        checked
+                                        >Block Listed Country</mat-radio-button
+                                      >
+                                      <mat-radio-button
+                                        value="Allow_Listed_Country"
+                                        >Allow Listed Country
+                                        Only</mat-radio-button
+                                      >
+                                    </mat-radio-group>
+                                  </div>
+                                  <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="tagus-form-group">
+                                      <mat-form-field
+                                        class="tagus-form-group mt-20"
+                                      >
+                                        <input
+                                          matInput
+                                          placeholder=""
+                                          formControlName="countriesList"
+                                        />
+                                      </mat-form-field>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <span class="small-info-txt"
+                              >Enter 2 digit Country Code(ex. US,CA,BD),
+                              Separated by comma</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Spam Emails
+                          </label>
+                          <mat-form-field class="tagus-form-group mt-20">
+                            <textarea
+                              matInput
+                              cdkTextareaAutosize
+                              formControlName="spamEmails"
+                              #autosize="cdkTextareaAutosize"
+                              cdkAutosizeMinRows="5"
+                              cdkAutosizeMaxRows="5"
+                            ></textarea>
+                          </mat-form-field>
+                          <span class="small-info-txt"
+                            >Example: Enter email address(ex. example at
+                            example.com), Separated by comma</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Enable Force SSL</label
+                          >
+
+                          <p>
+                            Enable this then this app will check SSL Request, if
+                            not then it will redirect to SSL URL
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="tagus-form-group">
+                          <mat-slide-toggle
+                            formControlName="enableForceSSLSecurity"
+                          ></mat-slide-toggle>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+
+                <mat-card-actions class="float-right">
+                  <button
+                    mat-flat-button
+                    class="button-style secondery-button"
+                    (click)="tabValue = 3"
+                  >
+                    Back
+                  </button>
+                  <button
+                    mat-flat-button
+                    class="button-style primary-button"
+                    (click)="tabValue = 5"
+                    [disabled]="securityFormGroup.invalid"
+                  >
+                    Next
+                  </button>
+                  <!--  -->
+                </mat-card-actions>
+              </section>
+            </mat-tab>
+          </form>
+          <form [formGroup]="otherFormGroup">
+            <mat-tab
+              label="Others Settings"
+              [disabled]="isTabDisabled(5)"
+              [ngClass]="{ tabColor: tabValue > 5 }"
+            >
+              <section>
+                <mat-card class="box-shdaow card-conatiner">
+                  <!-- <mat-card-header class="inner-heading pad-10">
+                                        <mat-card-title>Theme Settings </mat-card-title>                                       
+                                      </mat-card-header> -->
+                  <mat-card-content>
+                    <div class="row">
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black">
+                              On Ticket Open
+                            </label>
+                            <p>
+                              If you enable this then admin will get
+                              notification on ticket open
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="onTicketOpenOtherSetting"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black">
+                              On Ticket Assign
+                            </label>
+                            <p>
+                              If you enable this then assigned user will get
+                              notification on ticket assigning
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="onTicketAssignOtherSetting"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+                <mat-card class="box-shdaow card-conatiner">
+                  <mat-card-header class="inner-heading pad-10">
+                    <mat-card-title>Google Analytics Settings </mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <div class="row">
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black">
+                              Google Analytics Settings
+                            </label>
+                            <p>To enable fakebook messenger chat</p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="googleAnalyticsSettings"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="tagus-form-group">
+                          <label class="d-block fw-semibold color-black"
+                            >Google Analytics Gtag ID</label
+                          >
+                          <mat-form-field class="tagus-form-group mt-20">
+                            <input
+                              matInput
+                              placeholder=""
+                              formControlName="googleAnalyticsGtagID"
+                            />
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+                <mat-card class="box-shdaow card-conatiner">
+                  <mat-card-header class="inner-heading pad-10">
+                    <mat-card-title>GDPR Settings </mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <div class="row">
+                      <div class="flex-f col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-10 col-md-10 col-sm-10">
+                          <div class="tagus-form-group">
+                            <label class="d-block fw-semibold color-black"
+                              >GDPR Settings</label
+                            >
+                            <p>GDPR provides more control over</p>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                          <div class="tagus-form-group">
+                            <mat-slide-toggle
+                              formControlName="GDPRSettings"
+                            ></mat-slide-toggle>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+                <mat-card-actions class="float-right">
+                  <button
+                    mat-flat-button
+                    class="button-style secondery-button"
+                    (click)="tabValue = 4"
+                  >
+                    Back
+                  </button>
+                  <!-- [disabled]-->
+                  <button
+                    mat-flat-button
+                    class="button-style primary-button"
+                    (click)="finalSave()"
+                    [disabled]="otherFormGroup.invalid"
+                  >
+                    Final Save
+                  </button>
+                </mat-card-actions>
+              </section>
+            </mat-tab>
+          </form>
+        </mat-tab-group>
+      </div>
+
+      <!--step area end-->
+    </div>
+  </div>
+</div>

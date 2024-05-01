@@ -1,0 +1,251 @@
+.bg {
+  background: #F2F4F7;
+}
+.main-panel{
+background-color: #fff;
+ border-radius: 20px;
+ width: 70%;
+ margin: auto;
+ padding: 25px;
+ flex-direction: row;
+}
+
+.child-1{
+background-color: #0B57FF;
+width:50%;
+border-radius: 1px;
+padding:44px;
+background-image: url(../../../assets/paterns-1.png);
+background-repeat: no-repeat;
+background-size: 100% 100%;
+background-position: top right;
+}
+.child-1 p img{
+  width:100%;
+}
+.child-2{
+background-color:#fff;
+width:50%;
+}
+
+
+.container{
+ height: 100%;
+ width: 60%;
+ padding: 20px;
+ border-radius: 20px;
+ /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+
+}
+
+
+.login-logo{
+
+ height:78px;
+ text-align: center;
+  
+ 
+}
+.text-area{
+text-align: center;
+color:#fff;
+padding-top:50px;
+
+}
+.text-area h2{
+ font-size: 42px;
+ font-family: "Poppins",sans-serif;
+ font-weight: 700;
+ margin-top: -32px;
+ margin-left: -2px;
+ padding: 4px 0;
+}
+.text-area p{
+ font-size: 18px;
+ line-height: 27px;
+ font-weight: 600;
+}
+
+.start-TrailC{
+
+ 
+}
+.login-txt{
+padding-left: 6%;
+padding-top: 83px;
+  
+}
+.login-txt .textC{
+ font-size: 23px;
+ font-weight: 500 !important;
+ color: #000;
+
+}
+.login-txt small{
+ font-size: 13px;
+}
+.login-p{
+ text-align: left;
+   padding-left: 6%;
+   font-size: 16px;
+}
+.contact-C{
+ width: 71%;
+   margin: auto;
+   padding: 110px 85px;
+}
+
+.fromsection{
+ padding:5%;
+}
+.fromsection div{
+ margin-block: 10px;
+ }
+
+.fromsection label{
+font-weight: 400;
+color:#000;
+font-size: 15px;
+margin: 1% 0;
+}
+.fromsection input,select,textarea{
+width: 100%;
+margin: 1% 0 0% 0;
+/* padding: 3% 3%; */
+border: 1px solid #B4BDDF;
+border-radius: 5px;
+color: #000;
+font-size: 16px;
+height: 44px;
+padding-left: 35px;
+} 
+.fromsection .error{
+  border:1px solid #dc3545;
+  
+
+}
+/* Change autocomplete styles in WebKit */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+ -webkit-text-fill-color: #000 !important;;
+ -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;;
+transition: background-color 5000s ease-in-out 0s !important;;
+}
+
+.input-icon{
+font-size: 15px;
+ display: -webkit-box;
+ display: -webkit-flex;
+ display: -moz-box;
+ display: -ms-flexbox;
+ display: flex;
+ align-items: center;
+ position: absolute;
+ border-radius: 25px;
+ bottom: 0;
+ top: 8%;
+ padding-left: 10px;
+ color: #666;
+}
+.btn-InnerC{
+ background-color: #4F96FD !important;
+ color: #fff !important;
+ width: 100%;
+ height: 44px;
+ font-size: 17px;
+ margin-top: 5%;
+ border: none;
+ border-radius: 5px;
+}
+mat-form-field{
+ width: 100% !important;
+}
+
+
+.mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-form-field-infix {
+ padding-top: 23px !important;
+ padding-bottom: 8px;
+}
+.or-container {
+ align-items: center;
+ color: #ccc;
+ display: flex;
+ margin: 8px 0;
+}
+.line-separator {
+ background-color: #ccc;
+ flex-grow: 5;
+ height: 1px;
+}
+.or-label {
+ flex-grow: 1;
+ margin: 0 15px;
+ text-align: center;
+}
+.line-separator {
+ background-color: #ccc;
+ flex-grow: 5;
+ height: 1px;
+}
+.btn-google {
+ color: #545454;
+ background-color: #ffffff;
+ height: 44px;
+ border: 1px solid #D9D9D9;
+ width: 100%;
+}
+.btn-google b{
+padding-left: 10px;
+font-size: 1rem;
+}
+.register{
+text-align: center;
+font-size: 14px;
+font-weight: 500;
+}
+.blue-xt{
+ color:#427BCE;
+ font-size: 14px;
+ font-weight: 700;
+ cursor: pointer;
+}
+.flex-f{
+border: 1px solid #ccc;
+border-radius: 1px;
+display: flex;
+}
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  border-top-color: #000000;
+  animation: spinner .8s linear infinite;
+}
+
+@media (max-width: 400px) {
+  
+  .container{
+    width:100%;
+  }
+  .child-1,.child-2{
+    width:100% !important;
+  }
+  .flex-f{
+    display: block;
+  }
+}

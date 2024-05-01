@@ -1,0 +1,106 @@
+<div class="page-wrapper ">
+
+  <div class="container">
+    <div class="flex-f" fxLayoutAlign="center center" fxLayout="row">
+      <div class="child-1">
+        <div class="login-logo">
+          <img src="../../../assets/Sampark-logo-white.png" />
+        </div>
+        <div class="text-area">
+          <p><img src="../../../assets/login-lap.png"></p>
+          <p class="text-area">Our ITSM suite is highly customizable </p>
+        </div>
+      </div>
+      <div class="child-2">
+        <div class="start-TrailC">
+
+          <div class="login-txt">
+            <div class="back-arrow">
+              <i _ngcontent-ng-c478804759="" class="bx bxs-left-arrow-circle"></i> Back
+            </div>
+            <div class="textC">Get Started Now</div>
+            <small>Start manganin your IT service</small>
+          </div>
+          <section class="fromsection">
+            <form *ngIf="form1" [formGroup]="firstForm">
+              <div>
+                <mat-form-field appearance="outline">
+                  <input formControlName="email" matInput type="email" placeholder="you@example.com">
+                  <span class="input-icon"><i class="fa fa-envelope-o"></i></span>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field appearance="outline">
+                  <input formControlName="password" matInput placeholder="At least 8 Character" autocomplete="false"
+                    [type]="hide ? 'password' : 'text'">
+                  <span class="input-icon"><i class="fa fa-key"></i></span>
+                  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field appearance="outline">
+                  <input formControlName="confirmPassword" matInput placeholder="Confirm  Password" autocomplete="false"
+                    [type]="hideConfirm ? 'password' : 'text'">
+                  <span class="input-icon"><i class="fa fa-key"></i></span>
+                  <mat-icon matSuffix (click)="hideConfirm = !hideConfirm">{{hideConfirm ? 'visibility_off' :
+                    'visibility'}}</mat-icon>
+                  <!-- <mat-hint *ngIf="!passwordInput?.value">Enter your password</mat-hint> -->
+                  <div *ngIf="firstForm.hasError('passwordMismatch')">Passwords do not match.</div>
+
+                </mat-form-field>
+              </div>
+
+
+              <button type="button" class="btn-InnerC" (click)="form1=false">Sign Up </button>
+
+              <div class="or-container">
+                <div class="line-separator"></div>
+                <div class="or-label">or</div>
+                <div class="line-separator"></div>
+              </div>
+              <div class="col-md-12"> <a class="btn btn-lg btn-google btn-block text-capitalize  btn-outline"
+                  href="#"><img src="https://img.icons8.com/color/16/000000/google-logo.png"> <b>Sign up with
+                    Google</b></a> </div>
+              <p class="register">Already have an account ? <a href=""><span class="blue-xt">Log In</span></a></p>
+            </form>
+
+            <form *ngIf="!form1" [formGroup]="secondForm">
+              <div>
+                <mat-form-field appearance="outline">
+                  <input formControlName="name" matInput type="input" placeholder="Your Name">
+                  <span class="input-icon"><i class="fa fa-user-o"></i></span>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field appearance="outline">
+                  <input formControlName="companyName" matInput placeholder="Company Name">
+                  <span class="input-icon"><i class="fa fa-building-o"></i></span>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field appearance="outline">
+                  <input formControlName="mobile" matInput placeholder="Phone Number" (keypress)="keyPress($event)"
+                    maxlength="10">
+
+                  <span class="input-icon"><i class="fa fa-phone"></i></span>
+                </mat-form-field>
+              </div>
+              <span *ngIf="isError">{{errorMessage}}</span>
+
+              <button type="button" class="btn-InnerC" [class.spinner]="loading"
+                [disabled]="firstForm.invalid || secondForm.invalid || loading" (click)="formSubmit()">Create an account
+              </button>
+
+
+            </form>
+          </section>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+</div>

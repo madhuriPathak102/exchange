@@ -1,0 +1,315 @@
+<div class="page-wrapper page-container">
+  <div class="main-panel">
+    <div class="content-wrapper">
+      <!-- Page Title-->
+      <div class="page-title-heading mb-16">
+        <h1>Role Permission</h1>
+      </div>
+      <mat-card class="example-card box-continer-whole page-steper">
+        <mat-card-header class="borderB flex-f">
+          <div class="flex-f align-center justify-content">
+            <div class="tagus-form-group">
+              <mat-form-field class="tagus-form-group width80">
+                <mat-select [(ngModel)]="selectRole" placeholder="Select...">
+                  <mat-option value="UserName">User Role</mat-option>
+                  <mat-option value="Email">Page Role</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div style="flex-grow: 8; display: flex; justify-content: end">
+            <button
+              type="button"
+              mat-raised-button
+              color="primary"
+              (click)="openPageRoleDialog()"
+            >
+              <span class="bx bx-refresh"></span>&nbsp; Reset Role</button
+            >&nbsp;
+            <button
+              type="button"
+              mat-raised-button
+              color="primary"
+              (click)="openPermissionPageRoleDialog()"
+            >
+              <span class="bx bx-transfer"></span>&nbsp;Copy Role Access
+            </button>
+            &nbsp;
+            <button
+              type="button"
+              mat-raised-button
+              color="primary"
+              routerLink="/admin/rolelist"
+              (click)="openCreateRoleDialog()"
+            >
+              <span class="bx bx-plus-circle"></span>&nbsp;Add Role
+            </button>
+          </div>
+        </mat-card-header>
+
+        <mat-card-content>
+          <table class="table">
+            <thead class="table-dark">
+              <tr>
+                <th>Sr No</th>
+                <th>Page Title</th>
+                <th>Super Admin</th>
+                <th>Tester</th>
+                <th>App Support</th>
+                <th>infa support</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><b>Admin Setting</b></td>
+                <td class="text-danger">In active</td>
+                <td class="text-sucess">In active</td>
+                <td class="text-danger">In active</td>
+                <td class="text-danger">In active</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td><b>Admin Setting</b></td>
+                <td class="text-danger">In active</td>
+                <td class="text-sucess">In active</td>
+                <td class="text-danger">In active</td>
+                <td class="text-danger">In active</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td><b>Admin Setting</b></td>
+                <td class="text-danger">In active</td>
+                <td class="text-sucess">In active</td>
+                <td class="text-danger">In active</td>
+                <td class="text-danger">In active</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="container">
+            <div class="col-md-12">
+              <div class="panel panel-default">
+                <div class="panel-heading"></div>
+                <div class="panel-body">
+                  <table class="table">
+                    <thead class="table-dark">
+                      <tr>
+                        <th>Page Title</th>
+                        <th>Super Admin</th>
+                        <th>Tester</th>
+                        <th>App Support</th>
+                        <th>infa support</th>
+                        <th>infa support</th>
+                        <th>infa support</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr
+                        data-toggle="collapse"
+                        data-target="#demo1"
+                        class="accordion-toggle"
+                      >
+                        <td>
+                          <button class="btn btn-default btn-xs">
+                            <span class="bx bxs-happy-heart-eyes"></span>
+                          </button>
+                        </td>
+                        <td colspan="6" class="text-sucess color-black">
+                          <strong> Admin</strong>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colspan="12" class="hiddenRow">
+                          <div class="accordian-body collapse" id="demo1">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th class="text-black" style="width: 140px">
+                                    Admin Setting
+                                  </th>
+                                  <th class="text-success">Active</th>
+                                  <th class="text-success">Active</th>
+                                  <th class="text-danger">In Active</th>
+                                  <th class="text-success">Active</th>
+                                  <th class="text-success">Active</th>
+                                  <th class="text-success">Active</th>
+                                </tr>
+                                <tr>
+                                  <th class="text-black" style="width: 140px">
+                                    Admin Setup
+                                  </th>
+                                  <th class="text-success">Active</th>
+                                  <th class="text-success">Active</th>
+                                  <th class="text-danger">In Active</th>
+                                  <th class="text-success">Active</th>
+                                  <th class="text-success">Active</th>
+                                  <th class="text-success">Active</th>
+                                </tr>
+                              </thead>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Modal -->
+      <!-- <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-md" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New Role</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container text-center">
+                <div class="row align-items-start">
+                  <div class="col">
+                    <div class="tagus-form-group">
+                      <label class="d-block fw-semibold color-black txt-start"
+                        >Title</label
+                      >
+                      <mat-form-field class="tagus-form-group mt-20">
+                        <input
+                          matInput
+                          placeholder="Name"
+                          formControlName="Title"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+                <div class="row align-items-start margin-tb">
+                  <div class="col">
+                    <div class="tagus-form-group">
+                      <label class="d-block fw-semibold color-black txt-start"
+                        >Department
+                      </label>
+                      <mat-form-field class="tagus-form-group mt-20">
+                        <select>
+                          <option value="Selet All">Select All</option>
+                          <option value="Bin Owner Wise">Bin Owner Wise</option>
+                          <option value="Open For Everyone">
+                            Open For Everyone
+                          </option>
+                          <option value="With Roster Round Robin">
+                            With Roster Round Robin
+                          </option>
+                          <option value="Without Roster Round Robin">
+                            Without Roster Round Robin
+                          </option>
+                          <option value="Workflow For Bin Assignment">
+                            Workflow For Bin Assignment
+                          </option>
+                        </select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+                <div class="row align-items-start margin-tb">
+                  <div class="col">
+                    <div class="tagus-form-group">
+                      <label class="d-block fw-semibold color-black txt-start"
+                        >Assigment Rule
+                      </label>
+                      <mat-form-field class="tagus-form-group mt-20">
+                        <select>
+                          <option value="Selet All">Select All</option>
+                          <option value="Bin Owner Wise">Bin Owner Wise</option>
+                          <option value="Open For Everyone">
+                            Open For Everyone
+                          </option>
+                          <option value="With Roster Round Robin">
+                            With Roster Round Robin
+                          </option>
+                          <option value="Without Roster Round Robin">
+                            Without Roster Round Robin
+                          </option>
+                          <option value="Workflow For Bin Assignment">
+                            Workflow For Bin Assignment
+                          </option>
+                        </select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">Save Role</button>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!--Delete role-->
+      <!-- Modal -->
+      <!-- <div
+        class="modal fade"
+        id="deleteRole"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="deleteRoleLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Delete Role</h5>
+            </div>
+            <div class="modal-body">
+              <div class="container text-center">
+                <div class="row align-items-start">
+                  <div class="col">
+                    <div class="tagus-form-group">
+                      <label class="d-block fw-semibold color-black txt-start"
+                        >Are you want to delete role ?</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-light" data-dismiss="modal">
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">Delete Role</button>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>

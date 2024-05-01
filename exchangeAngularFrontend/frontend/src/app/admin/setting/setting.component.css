@@ -1,0 +1,72 @@
+.select-option opttion {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*Setper*/
+.page-steper {
+  border-radius: 20px;
+  background: #fff;
+}
+
+/*card-area*/
+.card-conatiner {
+  border-radius: 10px;
+  background-color: #fff;
+  width: 100%;
+}
+.fxFlex div {
+  width: 100%;
+}
+.display-block {
+  margin-bottom: 27px;
+}
+.row {
+  padding: 1%;
+  display: flex;
+  align-items: center;
+}
+
+.app-icon {
+  align-items: center;
+  justify-content: space-between;
+  width: 80% !important;
+  display: flex;
+}
+.small-box {
+  border-radius: 5px;
+  background: #f5f7f93b;
+  width: 100% !important;
+  height: 100%;
+  overflow: hidden;
+  margin-top: 5px;
+  padding: 1%;
+  border: 1px solid #f1f1f1;
+}
+input[type="text"] {
+  width: 50%;
+}
+
+/*Upload box*/
+
+.upload-box {
+  border-radius: 5px !important;
+  border: 1px dashed #427bce !important;
+  background: rgba(239, 240, 243, 0.19) !important;
+  height: 128px !important;
+  width: 100% !important;
+  text-align: center;
+}
+.upload-box .fa-cloud-upload {
+  display: block;
+  margin: 18px 0 10px 0;
+  font-size: 30px;
+  color: #0579ff;
+}
+color:visited {
+  color: green;
+}

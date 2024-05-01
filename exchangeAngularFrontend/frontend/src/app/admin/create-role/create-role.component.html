@@ -1,0 +1,61 @@
+<form [formGroup]="createFormGroup">
+  <mat-dialog-content>
+    <h3>Create Role</h3>
+  </mat-dialog-content>
+  <hr
+    style="height: 2px; border-width: 0; color: gray; background-color: gray"
+  />
+  <mat-dialog-content>
+    <div class="tagus-form-group">
+      <label class="d-block fw-semibold color-black txt-start">Title</label>
+      <mat-form-field class="tagus-form-group mt-20">
+        <input
+          matInput
+          placeholder="Enter the titile ..."
+          formControlName="creatorTitle"
+        />
+      </mat-form-field>
+    </div>
+    <br />
+
+    <div class="tagus-form-group">
+      <label class="d-block fw-semibold color-black txt-start"
+        >Select Department</label
+      >
+      <mat-form-field class="tagus-form-group mt-20">
+        <mat-select formControlName="department" placeholder="Select...">
+          <mat-option value="admin">admin</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <br />
+
+    <div class="tagus-form-group">
+      <label class="d-block fw-semibold color-black txt-start"
+        >Select Assign Rule</label
+      >
+      <mat-form-field class="tagus-form-group mt-20">
+        <mat-select formControlName="assignRule" placeholder="Select...">
+          <mat-option value="admin">admin</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <hr
+    style="height: 2px; border-width: 0; color: gray; background-color: gray"
+  />
+  <mat-dialog-actions>
+    <button type="button" mat-raised-button [mat-dialog-close]="false">
+      Close
+    </button>
+    <button
+      type="button"
+      mat-raised-button
+      color="primary"
+      (click)="onSubmit()"
+    >
+      {{ data ? "Update reset role" : "Save Role" }}
+    </button>
+  </mat-dialog-actions>
+</form>
